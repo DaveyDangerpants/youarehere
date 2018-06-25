@@ -1,2 +1,3 @@
-# youarehere
-A web-based AR project
+#You Are Here - Demo
+
+[Run the demo live](https://daveydangerpants.github.io/youarehere/)
