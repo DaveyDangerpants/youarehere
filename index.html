@@ -25,7 +25,7 @@
 
 <body onload="voiceChange(); freqAvg();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("added plane 3");</script>
+<script>alert("added plane 4");</script>
   <a-scene embedded arjs>
   	<!-- assets -->
   	<a-assets>
@@ -37,7 +37,7 @@
 
     <!-- wrapping the gltf model in an entity to animate -->
 	<a-marker type='pattern' url='https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/pattern-marker.patt'>
-    <a-entity geometry="primitive:plane; height: 10; width: 10;" material="side:double; shader:flat; color:#000" position="0 0 0"></a-entity>
+    <a-entity geometry="primitive:plane; height: 10; width: 10;" material="side:double; shader:flat; color:#000" position="0 9 0" rotation="90 0 0"></a-entity>
 	<a-entity rotation="90 0 0">
       <a-entity position="0 0 30" scale="1 1 1" animation="property: rotation; to: 0 0 360; loop: true; easing:linear; dur: 45000;">
         <a-entity gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 9 0"></a-entity>
