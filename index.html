@@ -25,7 +25,7 @@
 
 <body onload="voiceChange(); freqAvg();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("added lights");</script>
+<script>alert("added lights 1");</script>
   <a-scene embedded arjs>
   	<!-- assets -->
   	<a-assets>
@@ -46,8 +46,7 @@
 	</a-marker>
     <!-- animated lights -->
       <a-entity id="lightSphere" geometry="primitive:sphere; radius:1" material="shader:flat; color:#fff" light="type:point; color:#BBBBFF;" 
-                position="0 0 0" rotation="0 0 0" 
-                animation="property:position; to:0 0 7; dir:alternate; loop:true; dur:1000; easing:linear;">
+                position="0 0 30" rotation="0 0 0">
 
 
     <!-- define a camera which will move according to the marker position -->
