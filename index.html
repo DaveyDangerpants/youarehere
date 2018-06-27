@@ -25,11 +25,11 @@
 
 <body onload="voiceChange(); freqAvg();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("added plane - 40z - plane");</script>
+<script>alert("new model");</script>
   <a-scene embedded arjs>
   	<!-- assets -->
   	<a-assets>
-      <a-asset-item id="mandala" src="https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/brainage/scene.gltf"></a-asset-item>
+      <a-asset-item id="mandala" src="https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/mandala/scene.gltf"></a-asset-item>
     </a-assets>
   
     <!-- create your content here. just a box for now -->
@@ -37,11 +37,6 @@
 
     <!-- wrapping the gltf model in an entity to animate -->
 	<a-marker type='pattern' url='https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/pattern-marker.patt'>
-    <a-entity rotation="90 0 0">
-    	<a-entity position="0 -10 40">
-    		<a-entity geometry="primitive:plane; height: 20; width: 20;" material="side:double; shader:flat; color:#000" position="0 0 0"></a-entity>
-    	</a-entity>
-    </a-entity>
 	<a-entity rotation="90 0 0">
       <a-entity position="0 -10 30" scale="1 1 1" animation="property: rotation; to: 0 0 360; loop: true; easing:linear; dur: 45000;">
         <a-entity gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 9 0"></a-entity>
