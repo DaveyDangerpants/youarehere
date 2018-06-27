@@ -25,7 +25,7 @@
 
 <body onload="voiceChange(); freqAvg();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("z 30 fixedextraentity");</script>
+<script>alert("z 30 markercamera");</script>
   <a-scene embedded arjs>
   	<!-- assets -->
   	<a-assets>
@@ -36,19 +36,17 @@
     <!--<a-box position='0 0 0' material='opacity: 0.5;'></a-box>-->
 
     <!-- wrapping the gltf model in an entity to animate -->
-	<a-marker type='pattern' url='https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/pattern-marker.patt'>
 	<a-entity rotation="90 0 0">
       <a-entity position="0 0 30" scale="1 1 1" animation="property: rotation; to: 0 0 360; loop: true; easing:linear; dur: 45000;">
         <a-entity gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 9 0"></a-entity>
       </a-entity>
     </a-entity>
       
-	</a-marker>
     <!-- animated lights -->
 
 
     <!-- define a camera which will move according to the marker position -->
-	<a-entity camera></a-entity>
+	<a-marker-camera type='pattern' url='https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/pattern-marker.patt'></a-marker-camera>
   </a-scene>
 
   <h1>You Are Here</h1>
