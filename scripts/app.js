@@ -44,6 +44,7 @@ var distortion = audioCtx.createWaveShaper();
 var gainNode = audioCtx.createGain();
 var biquadFilter = audioCtx.createBiquadFilter();
 var convolver = audioCtx.createConvolver();
+var compressor = audioCtx.createDynamicsCompressor();
 
 // distortion curve for the waveshaper, thanks to Kevin Ennis
 // http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion
@@ -105,8 +106,8 @@ if (navigator.mediaDevices.getUserMedia) {
            distortion.connect(biquadFilter);
            biquadFilter.connect(convolver);
            convolver.connect(gainNode);
-           gainNode.connect(audioCtx.destination);
-
+           gainNode.connect(compressor);
+		   compressor.connect(audioCtx.destination);
            voiceChange();
       })
       .catch( function(err) { console.log('The following gUM error occured: ' + err);})
@@ -118,19 +119,20 @@ function freqAvg() {
 
     analyser.fftSize = 256;
     var bufferLength = analyser.frequencyBinCount;
-    console.log(bufferLength);
-    var dataArray = new Uint8Array(bufferLength);
 
+    var dataArray = new Uint8Array(bufferLength);
     analyser.getByteFrequencyData(dataArray);
 
 	var sum = 0;
-
+	
     for(var i = 0; i < bufferLength; i++) {
     	sum += dataArray[i];
     }
 
     var avg = sum / bufferLength;
     console.log(avg);
+    requestAnimationFrame(freqAvg);
+
 }
 
 
