@@ -21,12 +21,24 @@
   <!-- include ar.js for A-Frame -->
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 
+    <script>
+      AFRAME.registerComponent('voiceControl', {
+        init: function () {
+          // Solution for Getting Entities.
+          var sceneEl = document.querySelector('a-scene');  // Or this.el since we're in a component.
+          sceneEl.querySelector('#interactiveMandala').setAttribute('material', {metalness: 1});
+        }
+      });
+    </script>
+
+
+
 </head>
 
-<body onload="voiceChange(); freqAvg();" style="margin : 0px; overflow: hidden;">
+<body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("-10 y");</script>
-  <a-scene embedded arjs>
+<script>alert("script changes");</script>
+  <a-scene embedded arjs voiceControl>
   	<!-- assets -->
   	<a-assets>
       <a-asset-item id="mandala" src="https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/mandala/scene.gltf"></a-asset-item>
@@ -39,7 +51,7 @@
 	<a-marker type='pattern' url='https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/pattern-marker.patt'>
 	<a-entity rotation="90 0 0">
       <a-entity position="0 -10 0" scale="1 1 1" animation="property: rotation; to: 0 0 360; loop: true; easing:linear; dur: 45000;">
-        <a-entity gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 0"></a-entity>
+        <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 0"></a-entity>
       </a-entity>
     </a-entity>
       
