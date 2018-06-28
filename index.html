@@ -32,7 +32,7 @@
 			var incomingFreq = freqAvg();
 			if (freqAvg) { 
 				this.el.emit('freqDataReceived', {currentFreq: incomingFreq}, true);
-				console.log(freqDataReceived.detail.currentFreq);
+				//console.log(freqDataReceived.detail.currentFreq);
 			}
 		}
 	});
@@ -44,6 +44,7 @@
 		    var mandalaEl = document.querySelector('#interactiveMandala');
     	    
 		  	mandalaEl.addEventListener('freqDataReceived', function(e) {
+        		console.log('eventlisteneradded');
         		var positionChange = (e.detail.currentFreq/2) + 1;
         		console.log(positionChange);
           		mandalaEl.setAttribute('animation', {
@@ -59,7 +60,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("its going to work 2");</script>
+<script>alert("its going to work 3");</script>
   <a-scene embedded arjs receivefreq>
   	<!-- assets -->
   	<a-assets>
