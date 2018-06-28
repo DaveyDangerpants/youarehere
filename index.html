@@ -26,11 +26,12 @@
 
 	AFRAME.registerComponent('receivefreq', {
     	init: function () {
-			var sceneEl = this.el;
+			var sceneEl = document.querySelector('<a-scene>');
     	},	
 		tick: function () {
 			if (freqAvg) { 
 				sceneEl.emit('freqDataReceived', {currentFreq: freqAvg()}, true);
+				console.log(freqDataReceived);
 			}
 		}
 	});
@@ -57,7 +58,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("using events");</script>
+<script>alert("using events 1");</script>
   <a-scene embedded arjs receivefreq>
   	<!-- assets -->
   	<a-assets>
