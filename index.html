@@ -24,6 +24,7 @@
     <script>
       AFRAME.registerComponent('voicecontrol', {
         init: function () {
+        	console.log("voicecontrol called");
           // get scene
           var sceneEl = document.querySelector('a-scene');  // Or this.el since we're in a component.
           // get model
