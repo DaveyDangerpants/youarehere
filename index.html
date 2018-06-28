@@ -24,9 +24,17 @@
     <script>
       AFRAME.registerComponent('voiceControl', {
         init: function () {
-          // Solution for Getting Entities.
+          // get scene
           var sceneEl = document.querySelector('a-scene');  // Or this.el since we're in a component.
-          sceneEl.querySelector('#interactiveMandala').setAttribute('material', {metalness: 1});
+          // get model
+          var mandalaEl = sceneEl.querySelector('#interactiveMandala');
+          // get current frequency
+          var currentFreq = (freqAvg()/60) * 5;
+          
+          mandalaEl.addEventListener('setSize', function () {
+            boxEl.setAttribute('position', '0 0' + currentFreq);  
+          });
+          boxEl.emit('setSize');
         }
       });
     </script>
