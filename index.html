@@ -37,6 +37,7 @@
           var positionChange = ((currentFreq/64) + 1 );
           //console.log("position change factor " + positionChange);
           mandalaEl.setAttribute('animation', 'to', 'z', positionChange);
+          console.log(mandalaEl.getAttribute('animation', 'to'));
 
         }
       });
@@ -47,7 +48,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("interactivity 28");</script>
+<script>alert("interactivity 29");</script>
   <a-scene embedded arjs voicecontrol>
   	<!-- assets -->
   	<a-assets>
