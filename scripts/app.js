@@ -130,8 +130,9 @@ function freqAvg() {
     }
 
     var avg = sum / bufferLength;
-    console.log(avg);
+    //console.log(avg);
     requestAnimationFrame(freqAvg);
+    return avg;
 
 }
 
