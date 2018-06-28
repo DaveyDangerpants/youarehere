@@ -25,10 +25,10 @@
       AFRAME.registerComponent('voicecontrol', {
         init: function () {
           console.log("voicecontrol called");
-          // get scene
-          var sceneEl = document.querySelector('a-scene');  // Or this.el since we're in a component.
 		},
 		tick: function (time, timeDelta) {
+          // get scene
+          var sceneEl = this.el;  // Or this.el since we're in a component.
           // get model
           var mandalaEl = sceneEl.querySelector('#interactiveMandala');
           // get current frequency
@@ -43,7 +43,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("interactivity 6");</script>
+<script>alert("interactivity 7");</script>
   <a-scene embedded arjs voicecontrol>
   	<!-- assets -->
   	<a-assets>
