@@ -29,13 +29,12 @@
           var sceneEl = document.querySelector('a-scene');  // Or this.el since we're in a component.
           // get model
           var mandalaEl = sceneEl.querySelector('#interactiveMandala');
-		}
-		 tick: function (time, timeDelta) {
+		},
+		tick: function (time, timeDelta) {
           // get current frequency
           var currentFreq = freqAvg();
           console.log(currentFreq);
           mandalaEl.setAttribute('position', '0 0' + currentFreq);  
-          });
         }
       });
     </script>
@@ -44,7 +43,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("interactivity 3");</script>
+<script>alert("interactivity 5");</script>
   <a-scene embedded arjs voicecontrol>
   	<!-- assets -->
   	<a-assets>
