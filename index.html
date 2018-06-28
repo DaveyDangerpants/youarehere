@@ -46,9 +46,10 @@
 		  	mandalaEl.addEventListener('freqDataReceived', function(e) {
         		console.log('eventlisteneradded');
         		var positionChange = (e.detail.currentFreq/2) + 1;
-        		console.log(positionChange);
+        		
           		mandalaEl.setAttribute('animation', {
           			to: {x:positionChange, y:0, z: positionChange}
+        		console.log(mandalaEl.getAttribute('animation', {to}));
           		});
           	});
     	}
@@ -60,7 +61,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("its going to work 6");</script>
+<script>alert("it's working?????");</script>
   <a-scene embedded arjs>
   	<!-- assets -->
   	<a-assets>
