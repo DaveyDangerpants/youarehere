@@ -165,7 +165,7 @@ function voiceChange() {
 // voiceSelect.onchange = function() {voiceChange();};
 
 
-mute.onclick = voiceMute;
+// mute.onclick = voiceMute;
 
 function voiceMute() {
   if(mute.id === "") {
