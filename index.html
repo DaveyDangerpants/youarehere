@@ -27,10 +27,10 @@
           console.log("voicecontrol called");
           // get scene
           var sceneEl = document.querySelector('a-scene');  // Or this.el since we're in a component.
-          // get model
-          var mandalaEl = sceneEl.querySelector('#interactiveMandala');
 		},
 		tick: function (time, timeDelta) {
+          // get model
+          var mandalaEl = sceneEl.querySelector('#interactiveMandala');
           // get current frequency
           var currentFreq = freqAvg();
           console.log(currentFreq);
@@ -43,7 +43,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("interactivity 5");</script>
+<script>alert("interactivity 6");</script>
   <a-scene embedded arjs voicecontrol>
   	<!-- assets -->
   	<a-assets>
