@@ -30,7 +30,7 @@
     	},	
 		tick: function () {
 			if (freqAvg) { 
-				this.emit('freqDataReceived', {currentFreq: freqAvg()}, true);
+				this.el.emit('freqDataReceived', {currentFreq: freqAvg()}, true);
 				console.log(freqDataReceived);
 			}
 		}
@@ -58,7 +58,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("using events SYNTAX! -defined");</script>
+<script>alert("using events work?");</script>
   <a-scene embedded arjs receivefreq>
   	<!-- assets -->
   	<a-assets>
