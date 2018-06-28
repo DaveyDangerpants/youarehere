@@ -36,7 +36,7 @@
           var currentFreq = freqAvg();
           var positionChange = ((currentFreq/32) + 1 );
           //console.log("position change factor " + positionChange);
-          mandalaEl.setAttribute('animation', 'to', {x:0, y:0, z:positionChange});
+          mandalaEl.setAttribute('animation', 'to', {x:positionChange, y:0, z:positionChange});
           console.log(mandalaEl.getAttribute('animation', 'to'));
 
         }
@@ -48,7 +48,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("interactivity 31");</script>
+<script>alert("interactivity 33");</script>
   <a-scene embedded arjs voicecontrol>
   	<!-- assets -->
   	<a-assets>
@@ -63,7 +63,7 @@
 	<a-entity rotation="90 0 0">
       <a-entity position="0 0 0" scale=".1 .1 .1" animation="property: rotation; to: 0 0 360; loop: true; easing:linear; dur: 45000;">
         <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 0"
-        	animation="property: position; to:0 0 0;">
+        	animation="property: position; to:0 0 0; dur: 100;">
         </a-entity>
       </a-entity>
     </a-entity>
