@@ -35,7 +35,7 @@
           var currentFreq = freqAvg();
           var positionChange = ((currentFreq/128) + 1 );
           console.log("position change factor " + positionChange);
-          sceneEl.mandalaEl.position.z = positionChange;
+          sceneEl.mandalaEl.object3D.position.z = positionChange;
         }
       });
     </script>
@@ -44,7 +44,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("interactivity 23");</script>
+<script>alert("interactivity 24");</script>
   <a-scene embedded arjs voicecontrol>
   	<!-- assets -->
   	<a-assets>
