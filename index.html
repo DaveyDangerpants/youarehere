@@ -53,11 +53,11 @@
         		console.log('eventlisteneradded');
         		
         		// calculate positional change based on incoming frequency data
-        		var positionChange = (e.detail.currentFreq/2) + 1;        		
+        		var positionChange = (5*(e.detail.currentFreq/2) + 1);        		
 				
 				// apply positional change to animation component of model
           		mandalaEl.setAttribute('animation', {
-          			to: {x:positionChange, y:0, z: positionChange}
+          			to: {x:0, y:0, z: positionChange}
           		});
           		
         		console.log(mandalaEl.getAttribute('animation').to);
@@ -71,7 +71,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("help me if you can");</script>
+<script>alert("holy shit!");</script>
   <a-scene embedded arjs>
   	<!-- assets -->
   	<a-assets>
