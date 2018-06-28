@@ -33,8 +33,9 @@
           var mandalaEl = sceneEl.querySelector('#interactiveMandala');
           // get current frequency
           var currentFreq = freqAvg();
-          console.log(currentFreq);
-          mandalaEl.setAttribute('position', '0 0' + currentFreq);  
+          var positionChange = currentFreq/128;
+          console.log("position change factor " + positionChange);
+          //mandalaEl.setAttribute('position', '0 0 ' + currentFreq);  
         }
       });
     </script>
@@ -43,7 +44,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("interactivity 7");</script>
+<script>alert("interactivity 8");</script>
   <a-scene embedded arjs voicecontrol>
   	<!-- assets -->
   	<a-assets>
