@@ -71,7 +71,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("not just anybody");</script>
+<script>alert("help me if you can");</script>
   <a-scene embedded arjs>
   	<!-- assets -->
   	<a-assets>
@@ -86,7 +86,7 @@
 	<a-entity rotation="90 0 0">
       <a-entity position="0 0 0" scale=".1 .1 .1" animation="property: rotation; to: 0 0 360; loop: true; easing:linear; dur: 45000;">
         <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 0"
-        animation="property: scale; startEvents: receivefreq; dur:5;" receivefreq voicecontrol>
+        animation="property: position; startEvents: freqDataReceived;" receivefreq voicecontrol>
         </a-entity>
       </a-entity>
     </a-entity>
