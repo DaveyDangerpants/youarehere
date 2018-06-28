@@ -27,7 +27,7 @@
 	AFRAME.registerComponent('receiveFreq', {
     	init: function () {
 			var incomingData = new CustomEvent("freqDataReceived", {
-  				detail: {currentFreq: freqAvg();};
+  				detail: {currentFreq: freqAvg;};
  		 	});
     	};	
 		tick: function () {
@@ -56,7 +56,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("attached to mandala model 1");</script>
+<script>alert("attached to mandala model 2");</script>
   <a-scene embedded arjs receiveFreq>
   	<!-- assets -->
   	<a-assets>
@@ -71,7 +71,7 @@
 	<a-entity rotation="90 0 0">
       <a-entity position="0 0 0" scale=".1 .1 .1" animation="property: rotation; to: 0 0 360; loop: true; easing:linear; dur: 45000;">
         <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 0"
-        animation="property: scale; startEvents: voiceReceived; dur:5;">
+        animation="property: scale; startEvents: receiveFreq; dur:5;" voicecontrol>
         </a-entity>
       </a-entity>
     </a-entity>
