@@ -162,9 +162,7 @@ function voiceChange() {
 
 // event listeners to change visualize and voice settings
 
-voiceSelect.onchange = function() {
-  voiceChange();
-};
+// voiceSelect.onchange = function() {voiceChange();};
 
 
 mute.onclick = voiceMute;
