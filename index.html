@@ -24,14 +24,18 @@
     <script>
     // create and dispatch the event
 
-	AFRAME.registerComponent('receiveFreq', {
+	AFRAME.registerComponent('receivefreq', {
     	init: function () {
 			var incomingData = new CustomEvent("freqDataReceived", {
   				detail: {currentFreq: freqAvg()}
  		 	});
+ 		 	console.log(freqDataReceived.detail.currentFreq);
     	},	
 		tick: function () {
-			if (freqAvg) { console.log(freqDataReceived); dispatchEvent(freqDataReceived) }
+			if (freqAvg) { 
+				console.log(freqDataReceived); 
+				dispatchEvent(freqDataReceived);
+			}
 		}
 	});
 
@@ -56,8 +60,8 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("attached to mandala model 5");</script>
-  <a-scene embedded arjs receiveFreq>
+<script>alert("attached to mandala model 6");</script>
+  <a-scene embedded arjs receivefreq>
   	<!-- assets -->
   	<a-assets>
       <a-asset-item id="mandala" src="https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/mandala/scene.gltf"></a-asset-item>
@@ -71,7 +75,7 @@
 	<a-entity rotation="90 0 0">
       <a-entity position="0 0 0" scale=".1 .1 .1" animation="property: rotation; to: 0 0 360; loop: true; easing:linear; dur: 45000;">
         <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 0"
-        animation="property: scale; startEvents: receiveFreq; dur:5;" voicecontrol>
+        animation="property: scale; startEvents: receivefreq; dur:5;" voicecontrol>
         </a-entity>
       </a-entity>
     </a-entity>
