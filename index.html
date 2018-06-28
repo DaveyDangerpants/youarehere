@@ -29,7 +29,7 @@
 			var incomingData = new CustomEvent("freqDataReceived", {
   				detail: {currentFreq: freqAvg()}
  		 	});
-    	};	
+    	}	
 		tick: function () {
 			if (freqAvg) { console.log(freqDataReceived); dispatchEvent(freqDataReceived) }
 		}
@@ -56,7 +56,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("attached to mandala model 3");</script>
+<script>alert("attached to mandala model 4");</script>
   <a-scene embedded arjs receiveFreq>
   	<!-- assets -->
   	<a-assets>
