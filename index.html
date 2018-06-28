@@ -22,46 +22,34 @@
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 
     <script>
-    // create and dispatch the event
+      AFRAME.registerComponent('voicecontrol', {
+        init: function () {
+          console.log("voicecontrol called");
+          
+		},
+		tick: function (time, timeDelta) {
+          // get scene
+          var sceneEl = this.el;  // Or this.el since we're in a component.
+          // get model
+          var mandalaEl = sceneEl.querySelector('#interactiveMandala');
+          // get current frequency
+          var currentFreq = freqAvg();
+          var positionChange = ((currentFreq/16) + 1 );
+          //console.log("position change factor " + positionChange);
+          mandalaEl.setAttribute('animation', 'to', {x:positionChange, y:0, z:positionChange});
+          console.log(mandalaEl.getAttribute('animation', 'to'));
 
-	AFRAME.registerComponent('receivefreq', {
-    	init: function () {
-			var incomingData = new CustomEvent("freqDataReceived", {
-  				detail: {currentFreq: freqAvg()}
- 		 	});
- 		 	console.log(incomingData);
-    	},	
-		tick: function () {
-			if (freqAvg) { 
-				console.log(incomingData); 
-				dispatchEvent(incomingData);
-			}
-		}
-	});
-
-	AFRAME.registerComponent('voicecontrol', {
-    	init: function () {
-        	console.log("voicecontrol called");
-          	// get scene
-		    var mandalaEl = document.querySelector('#interactiveMandala');
-    	    
-		  	mandalaEl.addEventListener('freqDataReceived', function(e) {
-        		var positionChange = (e.detail.currentFreq/2) + 1;
-          		mandalaEl.setAttribute('animation', {
-          			to: {x:positionChange, y:0, z: positionChange}
-          		});
-          	});
-    	}
-    	
-    });
+        }
+      });
+      
     </script>
 
 </head>
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("attached to mandala model 8");</script>
-  <a-scene embedded arjs receivefreq>
+<script>alert("interactivity cmon!_restored);</script>
+  <a-scene embedded arjs voicecontrol>
   	<!-- assets -->
   	<a-assets>
       <a-asset-item id="mandala" src="https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/mandala/scene.gltf"></a-asset-item>
@@ -75,7 +63,7 @@
 	<a-entity rotation="90 0 0">
       <a-entity position="0 0 0" scale=".1 .1 .1" animation="property: rotation; to: 0 0 360; loop: true; easing:linear; dur: 45000;">
         <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 0"
-        animation="property: scale; startEvents: receivefreq; dur:5;" voicecontrol>
+        	animation="property: position; to:0 0 0; dur: 100;">
         </a-entity>
       </a-entity>
     </a-entity>
