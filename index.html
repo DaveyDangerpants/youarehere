@@ -29,7 +29,11 @@
 			//var sceneEl = document.querySelector('a-scene');
     	},	
 		tick: function () {
+			
+			//receive incoming frequency data
 			var incomingFreq = freqAvg();
+			
+			// if frequency data is incoming, emit event object along with frequency data information
 			if (incomingFreq) { 
 				this.el.emit('freqDataReceived', {currentFreq: incomingFreq}, true);
 				console.log('freqDataReceived emitted');
@@ -40,17 +44,23 @@
 	AFRAME.registerComponent('voicecontrol', {
     	init: function () {
         	console.log("voicecontrol called");
-          	// get scene
+
+          	// get reference to element
 		    var mandalaEl = document.querySelector('#interactiveMandala');
     	    
+    	    // add event listener that listens for incoming frequency data event
 		  	mandalaEl.addEventListener('freqDataReceived', function(e) {
         		console.log('eventlisteneradded');
-        		var positionChange = (e.detail.currentFreq/2) + 1;
         		
+        		// calculate positional change based on incoming frequency data
+        		var positionChange = (e.detail.currentFreq/2) + 1;        		
+				
+				// apply positional change to animation component of model
           		mandalaEl.setAttribute('animation', {
           			to: {x:positionChange, y:0, z: positionChange}
-        		console.log(mandalaEl.getAttribute('animation', {to}));
           		});
+          		
+        		console.log(mandalaEl.getAttribute('animation', {to}));
           	});
     	}
     	
@@ -61,7 +71,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("it's working?????");</script>
+<script>alert("please please please");</script>
   <a-scene embedded arjs>
   	<!-- assets -->
   	<a-assets>
