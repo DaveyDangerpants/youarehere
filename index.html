@@ -31,7 +31,7 @@
 		tick: function () {
 			var incomingFreq = freqAvg();
 			if (freqAvg) { 
-				this.el.emit('freqDataReceived', {currentFreq: incomingFreq, true);
+				this.el.emit('freqDataReceived', {currentFreq: incomingFreq}, true);
 				console.log(freqDataReceived.detail.currentFreq);
 			}
 		}
@@ -59,7 +59,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("its going to work");</script>
+<script>alert("its going to work 2");</script>
   <a-scene embedded arjs receivefreq>
   	<!-- assets -->
   	<a-assets>
