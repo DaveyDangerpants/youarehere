@@ -33,9 +33,9 @@
           console.log(currentFreq);
           
           mandalaEl.addEventListener('setSize', function () {
-            boxEl.setAttribute('position', '0 0' + currentFreq);  
+            mandalaEl.setAttribute('position', '0 0' + currentFreq);  
           });
-          boxEl.emit('setSize');
+          mandalaEl.emit('setSize');
         }
       });
     </script>
