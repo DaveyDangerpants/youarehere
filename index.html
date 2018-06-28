@@ -27,11 +27,11 @@
 	AFRAME.registerComponent('receiveFreq', {
     	init: function () {
 			var incomingData = new CustomEvent("freqDataReceived", {
-  				detail: {currentFreq: freqAvg;};
+  				detail: {currentFreq: freqAvg()}
  		 	});
     	};	
 		tick: function () {
-			if (freqAvg) { dispatchEvent(freqDataReceived) }
+			if (freqAvg) { console.log(freqDataReceived); dispatchEvent(freqDataReceived) }
 		}
 	});
 
@@ -56,7 +56,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("attached to mandala model 2");</script>
+<script>alert("attached to mandala model 3");</script>
   <a-scene embedded arjs receiveFreq>
   	<!-- assets -->
   	<a-assets>
