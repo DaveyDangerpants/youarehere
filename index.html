@@ -22,14 +22,15 @@
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 
     <script>
-      AFRAME.registerComponent('voiceControl', {
+      AFRAME.registerComponent('voicecontrol', {
         init: function () {
           // get scene
           var sceneEl = document.querySelector('a-scene');  // Or this.el since we're in a component.
           // get model
           var mandalaEl = sceneEl.querySelector('#interactiveMandala');
           // get current frequency
-          var currentFreq = (freqAvg()/60) * 5;
+          var currentFreq = freqAvg();
+          console.log(currentFreq);
           
           mandalaEl.addEventListener('setSize', function () {
             boxEl.setAttribute('position', '0 0' + currentFreq);  
@@ -45,8 +46,8 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("interactivity 1");</script>
-  <a-scene embedded arjs voiceControl>
+<script>alert("interactivity 2");</script>
+  <a-scene embedded arjs voicecontrol>
   	<!-- assets -->
   	<a-assets>
       <a-asset-item id="mandala" src="https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/mandala/scene.gltf"></a-asset-item>
