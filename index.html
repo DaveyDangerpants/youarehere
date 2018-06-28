@@ -25,6 +25,7 @@
       AFRAME.registerComponent('voicecontrol', {
         init: function () {
           console.log("voicecontrol called");
+          
 		},
 		tick: function (time, timeDelta) {
           // get scene
@@ -35,17 +36,18 @@
           var currentFreq = freqAvg();
           var positionChange = ((currentFreq/64) + 1 );
           //console.log("position change factor " + positionChange);
-          mandalaEl.setAttribute('position', 'z', positionChange);
+          mandalaEl.setAttribute('animation', 'to', 'z', positionChange);
 
         }
       });
+      
     </script>
 
 </head>
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("interactivity 27");</script>
+<script>alert("interactivity 28");</script>
   <a-scene embedded arjs voicecontrol>
   	<!-- assets -->
   	<a-assets>
@@ -59,7 +61,8 @@
 	<a-marker type='pattern' url='https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/pattern-marker.patt'>
 	<a-entity rotation="90 0 0">
       <a-entity position="0 0 0" scale=".1 .1 .1" animation="property: rotation; to: 0 0 360; loop: true; easing:linear; dur: 45000;">
-        <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 0">
+        <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 0"
+        	animation="property: scale; to:0.15 0.15 0.15;">
         </a-entity>
       </a-entity>
     </a-entity>
