@@ -24,30 +24,27 @@
     <script>
       AFRAME.registerComponent('voicecontrol', {
         init: function () {
-        	console.log("voicecontrol called");
+          console.log("voicecontrol called");
           // get scene
           var sceneEl = document.querySelector('a-scene');  // Or this.el since we're in a component.
           // get model
           var mandalaEl = sceneEl.querySelector('#interactiveMandala');
+		}
+		 tick: function (time, timeDelta) {
           // get current frequency
           var currentFreq = freqAvg();
           console.log(currentFreq);
-          
-          mandalaEl.addEventListener('setSize', function () {
-            mandalaEl.setAttribute('position', '0 0' + currentFreq);  
+          mandalaEl.setAttribute('position', '0 0' + currentFreq);  
           });
-          mandalaEl.emit('setSize');
         }
       });
     </script>
-
-
 
 </head>
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("interactivity 2");</script>
+<script>alert("interactivity 3");</script>
   <a-scene embedded arjs voicecontrol>
   	<!-- assets -->
   	<a-assets>
