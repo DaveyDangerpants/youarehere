@@ -53,7 +53,7 @@
         		//console.log('eventlisteneradded');
         		
         		// calculate positional change based on incoming frequency data
-        		var positionChange = (5*(e.detail.currentFreq/2) + 1);
+        		var positionChange = (-1*(5*(e.detail.currentFreq/2) + 50));
         		console.log(positionChange);        		
 				
 				// apply positional change to animation component of model
@@ -72,7 +72,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("holy shit! - see values");</script>
+<script>alert("flipped and scaled");</script>
   <a-scene embedded arjs>
   	<!-- assets -->
   	<a-assets>
