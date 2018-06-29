@@ -92,7 +92,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("easing change");</script>
+<script>alert("easing kills");</script>
   <a-scene embedded arjs>
   	<!-- assets -->
   	<a-assets>
@@ -109,10 +109,10 @@
 	<a-entity rotation="90 0 0">
       <a-entity position="0 0 0" scale=".1 .1 .1" animation="property: rotation; to: 0 0 360; loop: true; easing:linear; dur: 45000;">
         <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 5"
-        animation="property: scale; startEvents: freqDataReceived; easing: ease-in-out;" receivefreq voicecontrol>
+        animation="property: scale; startEvents: freqDataReceived; easing: ease-out;" receivefreq voicecontrol>
         </a-entity>
         <a-entity id="interactiveMandala2" gltf-model="#mandala2" scale="0.02 0.02 0.02" position="1 1 5"
-        animation="property: scale; startEvents: freqDataReceived; easing: ease-in-out;" receivefreq voicecontrol>
+        animation="property: scale; startEvents: freqDataReceived; easing: linear;" receivefreq voicecontrol>
         </a-entity>        
       </a-entity>
     </a-entity>
