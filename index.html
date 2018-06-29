@@ -67,34 +67,6 @@
     	
     });
 
-	AFRAME.registerComponent('voicecontrol2', {
-    	init: function () {
-
-          	// get reference to element
-		    var lightEl = document.querySelector('#lightSphere');
-    	    
-    	    // add event listener that listens for incoming frequency data event
-		  	lightEl.addEventListener('freqDataReceived', function(e) {
-        		//console.log('eventlisteneradded');
-        		
-        		// calculate positional change based on incoming frequency data
-        		var change = (3*(e.detail.currentFreq/64));
-        		//console.log(scaleChange);        		
-				
-				if (change > 1.1) {
-          			lightEl.setAttribute('animation', {to: '#3333FF'});
-				} else {
-          			lightEl.setAttribute('animation', {to: '#000000'});
-				}
-				// apply positional change to animation component of model
-          		
-        		//console.log(mandalaEl.getAttribute('animation').to);
-          	});
-    	}
-    	
-    });
-
-
     </script>
 
 	<style>
@@ -121,7 +93,7 @@
 	<a-entity rotation="90 0 0">
       <a-entity position="0 0 0" scale=".1 .1 .1" animation="property: rotation; to: 0 0 360; loop: true; easing:linear; dur: 45000;">
         <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 10"
-        animation="property: scale; startEvents: freqDataReceived; easing: ease-out;" receivefreq voicecontrol>
+        animation="property: scale; startEvents: freqDataReceived; receivefreq voicecontrol>
         </a-entity>
       </a-entity>
     </a-entity>
@@ -136,9 +108,9 @@
                 animation="property: position; to: 3 1 -3; dir: alternate; loop: true; easing:linear; dur: 3000;"></a-entity>
 
     <!-- moving point light -->      
-      <a-entity id="lightSphere" geometry="primitive:sphere; radius:1" material="visible:false;" light="type:point; color:#000;" 
+      <a-entity id="lightSphere" geometry="primitive:sphere; radius:1" material="visible:false;" light="type:point; color:#3311FF;" 
                 position="0 0 -2" rotation="0 0 0" 
-                animation="property:position; to:0 1 -7; dir:alternate; loop:true; dur:5000; easing:linear;">
+                animation="property:position; to:0 1 -7; dir:alternate; loop:true; dur:5000; easing:ease-in-out;">
       </a-entity>      
 
 
