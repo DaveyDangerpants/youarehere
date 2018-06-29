@@ -132,6 +132,9 @@ function freqAvg() {
     var avg = sum / bufferLength;
     //console.log(avg);
     requestAnimationFrame(freqAvg);
+    
+    
+    
     return avg;
 
 }
@@ -139,12 +142,12 @@ function freqAvg() {
 
 function voiceChange() {
 
-  distortion.oversample = '4x';
-  biquadFilter.gain.setTargetAtTime(0, audioCtx.currentTime, 0)
+  //distortion.oversample = '4x';
+  //biquadFilter.gain.setTargetAtTime(0, audioCtx.currentTime, 0)
   convolver.buffer = undefined;
 
   var voiceSetting = "convolver";
-  console.log(voiceSetting);
+  //console.log(voiceSetting);
 
   if(voiceSetting == "distortion") {
     distortion.curve = makeDistortionCurve(400);
@@ -155,7 +158,7 @@ function voiceChange() {
     biquadFilter.frequency.setTargetAtTime(1000, audioCtx.currentTime, 0)
     biquadFilter.gain.setTargetAtTime(25, audioCtx.currentTime, 0)
   } else if(voiceSetting == "off") {
-    console.log("Voice settings turned off");
+    //console.log("Voice settings turned off");
   }
 
 }
@@ -165,16 +168,3 @@ function voiceChange() {
 // voiceSelect.onchange = function() {voiceChange();};
 
 
-// mute.onclick = voiceMute;
-
-function voiceMute() {
-  if(mute.id === "") {
-    gainNode.gain.setTargetAtTime(0, audioCtx.currentTime, 0)
-    mute.id = "activated";
-    mute.innerHTML = "Unmute";
-  } else {
-    gainNode.gain.setTargetAtTime(1, audioCtx.currentTime, 0)
-    mute.id = "";
-    mute.innerHTML = "Mute";
-  }
-}
