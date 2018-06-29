@@ -92,7 +92,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("two mandalas");</script>
+<script>alert("easing change");</script>
   <a-scene embedded arjs>
   	<!-- assets -->
   	<a-assets>
@@ -108,11 +108,11 @@
 	<a-marker type='pattern' url='https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/pattern-marker.patt'>
 	<a-entity rotation="90 0 0">
       <a-entity position="0 0 0" scale=".1 .1 .1" animation="property: rotation; to: 0 0 360; loop: true; easing:linear; dur: 45000;">
-        <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 10"
-        animation="property: scale; startEvents: freqDataReceived; easing: linear;" receivefreq voicecontrol>
+        <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 5"
+        animation="property: scale; startEvents: freqDataReceived; easing: ease-in-out;" receivefreq voicecontrol>
         </a-entity>
-        <a-entity id="interactiveMandala2" gltf-model="#mandala2" scale="0.02 0.02 0.02" position="0 0 1"
-        animation="property: scale; startEvents: freqDataReceived; easing: linear;" receivefreq voicecontrol>
+        <a-entity id="interactiveMandala2" gltf-model="#mandala2" scale="0.02 0.02 0.02" position="1 1 5"
+        animation="property: scale; startEvents: freqDataReceived; easing: ease-in-out;" receivefreq voicecontrol>
         </a-entity>        
       </a-entity>
     </a-entity>
