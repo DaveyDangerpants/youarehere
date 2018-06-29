@@ -58,7 +58,7 @@
 				
 				// apply positional change to animation component of model
           		mandalaEl.setAttribute('animation', {
-          			to: {x:0.15, y:0.15, z: scaleChange}
+          			to: {x:scaleChange, y:scaleChange, z: scaleChange}
           		});
           		
         		console.log(mandalaEl.getAttribute('animation').to);
@@ -71,12 +71,13 @@
 	<style>
 	
 	#arjsDebugUIContainer {display:none;}
+	
 	</style>
 </head>
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("scaled instead - lets try 3");</script>
+<script>alert("which way to position on z?");</script>
   <a-scene embedded arjs>
   	<!-- assets -->
   	<a-assets>
@@ -90,7 +91,7 @@
 	<a-marker type='pattern' url='https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/pattern-marker.patt'>
 	<a-entity rotation="90 0 0">
       <a-entity position="0 0 0" scale=".1 .1 .1" animation="property: rotation; to: 0 0 360; loop: true; easing:linear; dur: 45000;">
-        <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 0"
+        <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 10"
         animation="property: scale; startEvents: freqDataReceived; easing: linear;" receivefreq voicecontrol>
         </a-entity>
       </a-entity>
