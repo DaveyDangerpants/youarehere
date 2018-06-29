@@ -47,6 +47,7 @@
 
           	// get reference to element
 		    var mandalaEl = document.querySelector('#interactiveMandala');
+		    var mandala2El = document.querySelector('#interactiveMandala2');
     	    
     	    // add event listener that listens for incoming frequency data event
 		  	mandalaEl.addEventListener('freqDataReceived', function(e) {
@@ -58,6 +59,20 @@
 				
 				// apply positional change to animation component of model
           		mandalaEl.setAttribute('animation', {
+          			to: {x:scaleChange, y:scaleChange, z: scaleChange}
+          		});
+          		
+        		//console.log(mandalaEl.getAttribute('animation').to);
+          	});
+		  	mandala2El.addEventListener('freqDataReceived', function(e) {
+        		//console.log('eventlisteneradded');
+        		
+        		// calculate positional change based on incoming frequency data
+        		var scaleChange = (3*(e.detail.currentFreq/64));
+        		//console.log(scaleChange);        		
+				
+				// apply positional change to animation component of model
+          		mandala2El.setAttribute('animation', {
           			to: {x:scaleChange, y:scaleChange, z: scaleChange}
           		});
           		
@@ -77,11 +92,13 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("which way to position on z?");</script>
+<script>alert("two mandalas");</script>
   <a-scene embedded arjs>
   	<!-- assets -->
   	<a-assets>
       <a-asset-item id="mandala" src="https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/mandala/scene.gltf"></a-asset-item>
+      <a-asset-item id="mandala2" src="https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/brainage/scene.gltf"></a-asset-item>
+
     </a-assets>
   
     <!-- create your content here. just a box for now -->
@@ -94,6 +111,9 @@
         <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 10"
         animation="property: scale; startEvents: freqDataReceived; easing: linear;" receivefreq voicecontrol>
         </a-entity>
+        <a-entity id="interactiveMandala2" gltf-model="#mandala2" scale="0.02 0.02 0.02" position="0 0 1"
+        animation="property: scale; startEvents: freqDataReceived; easing: linear;" receivefreq voicecontrol>
+        </a-entity>        
       </a-entity>
     </a-entity>
       
