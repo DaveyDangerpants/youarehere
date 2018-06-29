@@ -43,17 +43,18 @@
 
 	AFRAME.registerComponent('voicecontrol', {
     	init: function () {
-        	console.log("voicecontrol called");
+        	//console.log("voicecontrol called");
 
           	// get reference to element
 		    var mandalaEl = document.querySelector('#interactiveMandala');
     	    
     	    // add event listener that listens for incoming frequency data event
 		  	mandalaEl.addEventListener('freqDataReceived', function(e) {
-        		console.log('eventlisteneradded');
+        		//console.log('eventlisteneradded');
         		
         		// calculate positional change based on incoming frequency data
-        		var positionChange = (5*(e.detail.currentFreq/2) + 1);        		
+        		var positionChange = (5*(e.detail.currentFreq/2) + 1);
+        		console.log(positionChange);        		
 				
 				// apply positional change to animation component of model
           		mandalaEl.setAttribute('animation', {
@@ -71,7 +72,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("holy shit!");</script>
+<script>alert("holy shit! - see values");</script>
   <a-scene embedded arjs>
   	<!-- assets -->
   	<a-assets>
