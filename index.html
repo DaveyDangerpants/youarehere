@@ -53,7 +53,7 @@
         		//console.log('eventlisteneradded');
         		
         		// calculate positional change based on incoming frequency data
-        		var scaleChange = (5*(e.detail.currentFreq/2));
+        		var scaleChange = ((e.detail.currentFreq/64));
         		console.log(scaleChange);        		
 				
 				// apply positional change to animation component of model
@@ -72,7 +72,7 @@
 
 <body onload="voiceChange();" style="margin : 0px; overflow: hidden;">
 
-<script>alert("scaled instead - multipley");</script>
+<script>alert("scaled instead - happy medium");</script>
   <a-scene embedded arjs>
   	<!-- assets -->
   	<a-assets>
@@ -87,7 +87,7 @@
 	<a-entity rotation="90 0 0">
       <a-entity position="0 0 0" scale=".1 .1 .1" animation="property: rotation; to: 0 0 360; loop: true; easing:linear; dur: 45000;">
         <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 0"
-        animation="property: scale; startEvents: freqDataReceived;" receivefreq voicecontrol>
+        animation="property: scale; startEvents: freqDataReceived; easing: linear;" receivefreq voicecontrol>
         </a-entity>
       </a-entity>
     </a-entity>
