@@ -36,7 +36,7 @@
 			// if frequency data is incoming, emit event object along with frequency data information
 			if (incomingFreq) { 
 				this.el.emit('freqDataReceived', {currentFreq: incomingFreq}, true);
-				console.log('freqDataReceived emitted');
+				//console.log('freqDataReceived emitted');
 			}
 		}
 	});
@@ -54,14 +54,14 @@
         		
         		// calculate positional change based on incoming frequency data
         		var scaleChange = (3*(e.detail.currentFreq/64));
-        		console.log(scaleChange);        		
+        		//console.log(scaleChange);        		
 				
 				// apply positional change to animation component of model
           		mandalaEl.setAttribute('animation', {
           			to: {x:scaleChange, y:scaleChange, z: scaleChange}
           		});
           		
-        		console.log(mandalaEl.getAttribute('animation').to);
+        		//console.log(mandalaEl.getAttribute('animation').to);
           	});
     	}
     	
