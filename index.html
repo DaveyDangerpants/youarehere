@@ -113,10 +113,10 @@ alert("Use your voice to activate the work.");
 	<a-marker type='pattern' url='https://raw.githubusercontent.com/DaveyDangerpants/youarehere/master/images/pattern-marker.patt'>
 	<a-entity rotation="90 0 0">
       <a-entity position="0 0 0" scale=".1 .1 .1" animation="property: rotation; to: 0 0 360; loop: true; easing:linear; dur: 45000;">
-        <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 5"
+        <a-entity id="interactiveMandala" gltf-model="#mandala" scale="0.15 0.15 0.15" position="0 0 0"
         animation="property: scale; startEvents: freqDataReceived; easing: linear;" receivefreq voicecontrol>
         </a-entity>
-        <a-entity id="interactiveMandala2" gltf-model="#mandala2" scale="0.02 0.02 0.02" position=".35 .3 10"
+        <a-entity id="interactiveMandala2" gltf-model="#mandala2" scale="0.02 0.02 0.02" position="0 0 0"
         animation="property: scale; startEvents: freqDataReceived; easing: linear;" receivefreq voicecontrol>
         </a-entity>        
       </a-entity>
@@ -143,7 +143,7 @@ alert("Use your voice to activate the work.");
 	<a-entity camera></a-entity>
   </a-scene>
 
-  <h1 style="position: absolute;top: 10px; left: 10px; font-family:'Markazi Text', serif; color:#FFF; font-size:1.5em">You Are Here</h1>
+  <h1 style="position: absolute;top: 10px; left: 10px; font-family:'Markazi Text', serif; color:#FFF; font-size:2.5em">You Are Here</h1>
   
 </body>
 </html>
